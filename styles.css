@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#board {
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+
+#player {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 212px;
+    left: 80px;   
+}
+
+#player img {
+    width: 100%;
+    height: 100%;
+    bottom: 10px;
+}
+
+#background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(./assets/dinobg.png);
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: auto 100%;
+    animation: backgroundMove 5s linear infinite;
+}
+
+.playerJump {
+    animation: playerJump 0.5s linear;
+}
+
+#cactus {
+    position: absolute;
+    width: 55px;
+    height: 80px;
+    bottom: 200px;
+    right: 0;
+}
+
+.cactusMovement {
+    animation: cactusMovement 2s linear infinite;
+}
+
+#cactus img {
+    max-width: 100%;
+    max-height: 100%;
+    
+}
+
+#scoreContainer {
+    font-size: 50px;
+    text-align-last: center;
+    margin-top: 20px;
+}
+
+.button.play{
+    border-style: solid;
+    border-width: 37px 0 37px 60px;
+}
+
+.button {
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    width: 0;
+    height: 74px;
+    border-color: transparent transparent transparent #202020;
+    transition: 100ms all ease;
+    cursor: pointer;
+    border-style: double;
+    border-width: 0px 0 0px 60px;
+}
+
+.button:hover{
+    border-color: transparent transparent transparent #404040;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes playerJump {
+    0%{
+        bottom: 212px;;
+    }
+    30%, 60% {
+        bottom: 350px;
+    }
+}
+
+@keyframes backgroundMove {
+    from{
+        background-position: 0 0;
+    }
+    to{
+        background-position: -3000px 0;
+    }
+}
+
+@keyframes cactusMovement {
+    from {
+        right: 0%;
+    }
+    to {
+        right: 100%;
+    }
+}
